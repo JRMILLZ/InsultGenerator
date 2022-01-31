@@ -1,31 +1,23 @@
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 
 public class Sandbox {
-    public void insultGenerated() {        
+    public static void main(String[] args) throws IOException {
+        //identify the path to the csv file alternatively if it is located in your root file you can just use the file name
+        String path = "list.csv";
+        String line = "";
 
-            String path = "C:/Users/Jon/Desktop/Random_Insult/list.csv";
-            String line = "";                      
+        BufferedReader br = new BufferedReader(new FileReader(path));
 
-            try {
-                BufferedReader br = new BufferedReader(new FileReader(path));
-                                
-                while((line = br.readLine()) != null) {
-                    String[] values = line.split(",");                    
-                    Random r = new Random();
-                    int randomIndex = r.nextInt(values.length);
-                    String insult = (values[randomIndex]); 
-                    System.out.println(insult);                                       
-                }
+        while((line = br.readLine()) != null) {
+            String[] values = line.split(",");
 
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();            
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-    
+            Random rand = new Random();
+            int indexNum = rand.nextInt(values.length);
+            String insult = values[indexNum];
+            System.out.println(insult);              
         }        
+    }
 }

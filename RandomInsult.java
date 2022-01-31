@@ -34,8 +34,7 @@ public class RandomInsult implements ActionListener {
     public static void main(String[] args) {
         new RandomInsult();
     }
-
-    @Override
+    
     public void actionPerformed(ActionEvent e) {
 
         String[] insults = {"Fuck You!", "You are a bitch.", "You are a pussy.", "You are an idiot."};
