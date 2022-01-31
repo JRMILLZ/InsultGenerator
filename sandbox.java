@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.Random;
 
 public class Sandbox {
+
+    static String insult;
     public static void main(String[] args) throws IOException {
         //identify the path to the csv file alternatively if it is located in your root file you can just use the file name
         String path = "list.csv";
@@ -16,8 +18,9 @@ public class Sandbox {
 
             Random rand = new Random();
             int indexNum = rand.nextInt(values.length);
-            String insult = values[indexNum];
-            System.out.println(insult);              
-        }        
+            insult = values[indexNum];            
+            //System.out.println(insult);              
+        }
+    //System.out.println(insult);      
     }
 }
